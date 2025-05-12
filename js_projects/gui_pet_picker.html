@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pet Picker Game</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+  <div id="game-container" class="max-w-3xl mx-auto p-6 bg-white rounded shadow-md mt-10">
+    <h1 class="text-3xl font-bold mb-6 text-center">Pet Picker Game</h1>
+    <div id="welcome-screen" class="mb-6">
+      <label for="player-name" class="block mb-2 font-semibold">Enter your name:</label>
+      <input type="text" id="player-name" class="w-full p-2 border border-gray-300 rounded mb-4" />
+      <button id="start-btn" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Start
+        Game</button>
+    </div>
+
+    <div id="category-screen" class="hidden mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Select a Pet Category</h2>
+      <div id="categories" class="flex flex-wrap gap-4"></div>
+    </div>
+
+    <div id="name-screen" class="hidden mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Select a Pet Name</h2>
+      <div id="names" class="flex flex-wrap gap-4"></div>
+    </div>
+
+    <div id="attributes-screen" class="hidden mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Select Pet Attributes</h2>
+      <div class="attribute-select mb-4">
+        <label for="color-select" class="block mb-1 font-medium">Color:</label>
+        <select id="color-select" class="w-full p-2 border border-gray-300 rounded">
+          <option value="brown">Brown</option>
+          <option value="black">Black</option>
+          <option value="white">White</option>
+          <option value="golden">Golden</option>
+          <option value="spotted">Spotted</option>
+        </select>
+      </div>
+      <div class="attribute-select mb-4">
+        <label for="age-select" class="block mb-1 font-medium">Age:</label>
+        <select id="age-select" class="w-full p-2 border border-gray-300 rounded">
+          <option value="baby">Baby</option>
+          <option value="young">Young</option>
+          <option value="adult">Adult</option>
+          <option value="senior">Senior</option>
+        </select>
+      </div>
+      <div class="attribute-select mb-4">
+        <label for="personality-select" class="block mb-1 font-medium">Personality:</label>
+        <select id="personality-select" class="w-full p-2 border border-gray-300 rounded">
+          <option value="playful">Playful</option>
+          <option value="lazy">Lazy</option>
+          <option value="friendly">Friendly</option>
+          <option value="shy">Shy</option>
+          <option value="curious">Curious</option>
+        </select>
+      </div>
+      <button id="attributes-next-btn"
+        class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">Next</button>
+    </div>
+
+    <div id="care-screen" class="hidden mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Take Care of Your Pet</h2>
+      <p id="care-pet-name" class="mb-4 text-lg font-medium"></p>
+      <div class="flex gap-4 mb-4">
+        <button id="feed-btn"
+          class="flex-1 bg-yellow-400 text-gray-900 py-2 rounded hover:bg-yellow-500 transition">Feed</button>
+        <button id="play-btn"
+          class="flex-1 bg-pink-400 text-gray-900 py-2 rounded hover:bg-pink-500 transition">Play</button>
+        <button id="groom-btn"
+          class="flex-1 bg-purple-400 text-gray-900 py-2 rounded hover:bg-purple-500 transition">Groom</button>
+      </div>
+      <button id="care-done-btn" disabled
+        class="w-full bg-gray-400 text-white py-2 rounded cursor-not-allowed">Done</button>
+      <p id="happiness-display" class="mt-2 font-semibold"></p>
+    </div>
+
+    <div id="summary-screen" class="hidden mb-6">
+      <h2 class="text-2xl font-semibold mb-4">Game Summary</h2>
+      <p id="summary-text" class="mb-4"></p>
+      <button id="add-pet-btn" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition mb-2">Add
+        Another Pet</button>
+      <button id="end-game-btn" class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition">End
+        Game</button>
+    </div>
+
+    <div id="final-score-screen" class="hidden">
+      <h2 class="text-2xl font-semibold mb-4">Thank you for playing!</h2>
+      <p id="final-score-text" class="text-lg font-medium"></p>
+    </div>
+  </div>
+
+  <script type="module" src="./gui_pet_picker.js"></script>
+</body>
+
+</html>
